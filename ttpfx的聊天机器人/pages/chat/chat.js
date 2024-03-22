@@ -17,7 +17,7 @@ function initData(that) {
   msgList = [{
     speaker: 'server',
     contentType: 'text',
-    content: '你好，我是人工智能助手，请问有什么可以帮你？'
+    content: '你好，我是蛙蛙的文心一言，请问有什么可以帮你？'
   }, ]
   that.setData({
     msgList,
@@ -68,7 +68,7 @@ Page({
       let username = wx.getStorageSync('username')
       wx.removeStorageSync('username')
       wx.request({
-        url: 'http://127.0.0.1:80/user/logout',
+        url: 'https://114.55.237.202/user/logout',
         method: "get",
         data: {
           "username": username,
@@ -86,7 +86,7 @@ Page({
 
     }
     wx.request({
-      url: 'http://127.0.0.1:80/user/checkUserKey',
+      url: 'https://114.55.237.202/user/checkUserKey',
       method: "get",
       data: {
         "username": wx.getStorageSync('username'),
@@ -116,7 +116,7 @@ Page({
     }
 
     wx.connectSocket({
-      url: 'ws://127.0.0.1:80/chatWebSocket/' + wx.getStorageSync('username')
+      url: 'wss://114.55.237.202/chatWebSocket/' + wx.getStorageSync('username')
     })
     // console.log( new Date());
     // console.log(wx.getStorageSync('username'));

@@ -48,7 +48,7 @@ Page({
       })
     } else {
       wx.request({
-        url: 'http://127.0.0.1:80/user/login',
+        url: 'https://114.55.237.202/user/login',
         method: "get",
         data: {
           "username": username,
